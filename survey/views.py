@@ -5,6 +5,7 @@ from rest_framework import permissions, viewsets, routers
 from django.contrib.auth.models import User
 from rest_framework_simplejwt.views import TokenObtainPairView
 from survey.my_jwt_token import MyTokenObtainPairSerializer
+from excel_response import ExcelResponse
 
 
 # Create your views here.
@@ -76,8 +77,14 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
 
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
+
+
+
+def excelview(request):
+    objs = RespondentsAnswerData.objects.all()
+    return ExcelResponse(objs)

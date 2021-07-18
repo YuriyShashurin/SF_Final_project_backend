@@ -7,6 +7,7 @@ import uuid
 # Create your models here.
 
 class AnswerOption(models.Model):
+
     text = models.CharField(max_length=200)
     value = models.SmallIntegerField()
 
@@ -33,14 +34,15 @@ class Question(models.Model):
 
 
 class Project(models.Model):
-    owner = models.ForeignKey(User, on_delete=models.PROTECT)
+
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=200)
     publication_date = models.DateField(default=timezone.now)
     closing_date = models.DateField(default=timezone.now)
     life_time_value = models.IntegerField(default=60)
     is_active = models.BooleanField(default=False)
-    question = models.ManyToManyField(Question, through='Survey')
+    question = models.ManyToManyField(Question, through='Survey', blank=True)
     complete_code = models.UUIDField(verbose_name='Код завершенного интервью', default=uuid.uuid4, editable=False)
 
     def __str__(self):
@@ -48,9 +50,15 @@ class Project(models.Model):
 
 
 class Survey(models.Model):
+
+    id = models.CharField(max_length=100, primary_key=True)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, verbose_name='Проект')
     question = models.ForeignKey(Question, on_delete=models.CASCADE, verbose_name='Вопрос')
     weight = models.SmallIntegerField()
+
+    def save(self, *args, **kwargs):
+        self.id = '{}_{}'.format(self.project.id, self.question.id)
+        super(Survey, self).save(*args, **kwargs)
 
 
 class UsersAnswers(models.Model):
@@ -87,6 +95,7 @@ class RespondentsSurveyStatusData(models.Model):
 
 
 class RespondentsAnswerData(models.Model):
+
     survey_status = models.ForeignKey(RespondentsSurveyStatusData, on_delete=models.CASCADE)
     user_answers = models.ForeignKey(UsersAnswers, on_delete=models.CASCADE)
 
