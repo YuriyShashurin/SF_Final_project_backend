@@ -84,6 +84,10 @@ class RespondentsSurveyStatusData(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Пользователь')
     status = models.CharField(choices=STATUS_CHOICES, default=NOT_STARTED, max_length=100)
     last_question = models.SmallIntegerField(default=0, blank=True)
+    project_score = models.SmallIntegerField(default=0, blank=True)
+    answer_score = models.SmallIntegerField(default=0, blank=True)
+    time = models.PositiveSmallIntegerField(default=0, blank=True)
+    remaining_time = models.PositiveSmallIntegerField(default=0, blank=True)
     answers = models.ManyToManyField(UsersAnswers, through='RespondentsAnswerData', blank=True)
 
     def save(self, *args, **kwargs):

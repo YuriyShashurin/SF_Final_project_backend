@@ -5,16 +5,17 @@ from django.contrib.auth.models import User
 
 
 class UserSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True)
+
     class Meta:
         model = User
-        fields = ['id', 'username', 'email', 'is_active', 'first_name', 'last_name', 'is_staff']
+        fields = ['id', 'username', 'email', 'is_active', 'first_name', 'last_name', 'is_staff', 'password']
 
     def create(self, validated_data):
         password = validated_data.pop('password', None)
         instance = self.Meta.model(**validated_data)
         if password is not None:
             instance.set_password(password)
-            print(instance)
         instance.save()
         return instance
 
@@ -86,7 +87,7 @@ class RespondentsSurveyStatusDataSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = RespondentsSurveyStatusData
-        fields = ['id', 'project', 'user_id', 'status', 'last_question', 'answers']
+        fields = ['id', 'project', 'user_id', 'status', 'last_question', 'answers', 'project_score', 'answer_score', 'time','remaining_time']
 
 
 class RespondentsAnswerDataSerializer(serializers.ModelSerializer):
