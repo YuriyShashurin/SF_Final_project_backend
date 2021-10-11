@@ -30,6 +30,8 @@ ALLOWED_HOSTS = ['*']
 
 INTERNAL_IPS = [
     '127.0.0.1',
+    '178.154.200.34',
+    '0.0.0.0'
 ]
 
 SIMPLE_JWT = {
@@ -99,24 +101,13 @@ WSGI_APPLICATION = 'surveys.wsgi.application'
 DATABASES = {
    'default':{
       'ENGINE': 'django.db.backends.postgresql_psycopg2',
-      'NAME': config('DB_NAME'),
+      'NAME': config('DB_NAME', 'postgres'),
       'USER': 'postgres',
-      'PASSWORD': config('DB_PASSWORD'),
-      'HOST': 'localhost',
+      'PASSWORD': config('DB_PASSWORD', 'postgres'),
+      'HOST': config('DB_HOST', 'postgres'),
       'PORT': '',
    }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-#         'USER': 'postgres',
-#         'PASSWORD': 'postgres',
-#         'HOST': 'db',
-#         'PORT': '',
-#     }
-# }
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (

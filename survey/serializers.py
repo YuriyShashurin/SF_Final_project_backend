@@ -66,9 +66,7 @@ class ProjectSerializer(serializers.ModelSerializer):
                   'life_time_value', 'is_active', 'question']
 
     def create(self, validated_data):
-        print(validated_data)
         owner_id = validated_data.pop('owner_id', None)
-        print(owner_id)
         new_instance = Project.objects.create(**validated_data)
         owner = User.objects.filter(pk=int(owner_id))[0]
         new_instance.owner = owner

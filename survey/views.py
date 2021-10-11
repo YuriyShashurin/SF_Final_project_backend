@@ -16,7 +16,7 @@ class ProjectsViewSet(viewsets.ModelViewSet):
     """
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
 
@@ -42,7 +42,7 @@ class AnswerViewSet(viewsets.ModelViewSet):
     """
     queryset = AnswerOption.objects.all()
     serializer_class = AnswerSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class SurveyViewSet(viewsets.ModelViewSet):
@@ -58,7 +58,7 @@ class SurveyViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(project=project, question=question)
 
         return queryset
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class QuestionViewSet(viewsets.ModelViewSet):
@@ -67,7 +67,7 @@ class QuestionViewSet(viewsets.ModelViewSet):
     """
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class RespondentsSurveyStatusDataViewSet(viewsets.ModelViewSet):
@@ -76,7 +76,7 @@ class RespondentsSurveyStatusDataViewSet(viewsets.ModelViewSet):
     """
     queryset = RespondentsSurveyStatusData.objects.all()
     serializer_class = RespondentsSurveyStatusDataSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
 
@@ -100,7 +100,7 @@ class RespondentsAnswerDataViewSet(viewsets.ModelViewSet):
     """
     queryset = RespondentsAnswerData.objects.all()
     serializer_class = RespondentsAnswerDataSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class UsersAnswersViewSet(viewsets.ModelViewSet):
@@ -109,7 +109,7 @@ class UsersAnswersViewSet(viewsets.ModelViewSet):
     """
     queryset = UsersAnswers.objects.all()
     serializer_class = UserAnswersSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -118,7 +118,7 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class MyTokenObtainPairView(TokenObtainPairView):
