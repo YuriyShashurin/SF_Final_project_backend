@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>survey.migrations package &#8212; Survey 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="survey-migrations-package">
+<h1>survey.migrations package<a class="headerlink" href="#survey-migrations-package" title="Permalink to this headline">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-survey.migrations.0001_initial">
+<span id="survey-migrations-0001-initial-module"></span><h2>survey.migrations.0001_initial module<a class="headerlink" href="#module-survey.migrations.0001_initial" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0001_initial.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0001_initial.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0001_initial.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0001_initial.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('auth',</span> <span class="pre">'__first__')]</span></em><a class="headerlink" href="#survey.migrations.0001_initial.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0001_initial.Migration.initial">
+<span class="sig-name descname"><span class="pre">initial</span></span><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#survey.migrations.0001_initial.Migration.initial" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0001_initial.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='AnswerOption',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('text',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('value',</span> <span class="pre">&lt;django.db.models.fields.SmallIntegerField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Project',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('title',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('description',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('publication_date',</span> <span class="pre">&lt;django.db.models.fields.DateField&gt;),</span> <span class="pre">('closing_date',</span> <span class="pre">&lt;django.db.models.fields.DateField&gt;),</span> <span class="pre">('life_time_value',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('is_active',</span> <span class="pre">&lt;django.db.models.fields.BooleanField&gt;),</span> <span class="pre">('complete_code',</span> <span class="pre">&lt;django.db.models.fields.UUIDField&gt;),</span> <span class="pre">('owner',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Question',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('title',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('help_desc',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('type',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('answer_option',</span> <span class="pre">&lt;django.db.models.fields.related.ManyToManyField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='RespondentsAnswerData',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='UsersAnswers',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('answer',</span> <span class="pre">&lt;django.db.models.fields.PositiveSmallIntegerField&gt;),</span> <span class="pre">('project',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;),</span> <span class="pre">('question',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;),</span> <span class="pre">('user_id',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Survey',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('weight',</span> <span class="pre">&lt;django.db.models.fields.SmallIntegerField&gt;),</span> <span class="pre">('project',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;),</span> <span class="pre">('question',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='RespondentsSurveyStatusData',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('status',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('last_question',</span> <span class="pre">&lt;django.db.models.fields.SmallIntegerField&gt;),</span> <span class="pre">('answers',</span> <span class="pre">&lt;django.db.models.fields.related.ManyToManyField&gt;),</span> <span class="pre">('project',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;),</span> <span class="pre">('user_id',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='RespondentsAnswerData2',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('survey_status',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;),</span> <span class="pre">('user_answers',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='respondentsanswerdata',</span> <span class="pre">name='survey_status',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='respondentsanswerdata',</span> <span class="pre">name='user_answers',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='project',</span> <span class="pre">name='question',</span> <span class="pre">field=&lt;django.db.models.fields.related.ManyToManyField&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0001_initial.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0002_auto_20210614_1829">
+<span id="survey-migrations-0002-auto-20210614-1829-module"></span><h2>survey.migrations.0002_auto_20210614_1829 module<a class="headerlink" href="#module-survey.migrations.0002_auto_20210614_1829" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0002_auto_20210614_1829.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0002_auto_20210614_1829.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0002_auto_20210614_1829.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0002_auto_20210614_1829.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('survey',</span> <span class="pre">'0001_initial')]</span></em><a class="headerlink" href="#survey.migrations.0002_auto_20210614_1829.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0002_auto_20210614_1829.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='question',</span> <span class="pre">name='type',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='last_question',</span> <span class="pre">field=&lt;django.db.models.fields.SmallIntegerField&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0002_auto_20210614_1829.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0003_auto_20210615_2210">
+<span id="survey-migrations-0003-auto-20210615-2210-module"></span><h2>survey.migrations.0003_auto_20210615_2210 module<a class="headerlink" href="#module-survey.migrations.0003_auto_20210615_2210" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0003_auto_20210615_2210.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0003_auto_20210615_2210.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0003_auto_20210615_2210.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0003_auto_20210615_2210.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('survey',</span> <span class="pre">'0002_auto_20210614_1829')]</span></em><a class="headerlink" href="#survey.migrations.0003_auto_20210615_2210.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0003_auto_20210615_2210.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='question',</span> <span class="pre">name='type',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='answers',</span> <span class="pre">field=&lt;django.db.models.fields.related.ManyToManyField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='last_question',</span> <span class="pre">field=&lt;django.db.models.fields.SmallIntegerField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='status',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;,</span> <span class="pre">&lt;DeleteModel</span>&#160; <span class="pre">name='RespondentsAnswerData2'&gt;]</span></em><a class="headerlink" href="#survey.migrations.0003_auto_20210615_2210.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0004_auto_20210615_2214">
+<span id="survey-migrations-0004-auto-20210615-2214-module"></span><h2>survey.migrations.0004_auto_20210615_2214 module<a class="headerlink" href="#module-survey.migrations.0004_auto_20210615_2214" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0004_auto_20210615_2214.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0004_auto_20210615_2214.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0004_auto_20210615_2214.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0004_auto_20210615_2214.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('survey',</span> <span class="pre">'0003_auto_20210615_2210')]</span></em><a class="headerlink" href="#survey.migrations.0004_auto_20210615_2214.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0004_auto_20210615_2214.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='question',</span> <span class="pre">name='type',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='answers',</span> <span class="pre">field=&lt;django.db.models.fields.related.ManyToManyField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='status',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0004_auto_20210615_2214.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0005_alter_respondentssurveystatusdata_status">
+<span id="survey-migrations-0005-alter-respondentssurveystatusdata-status-module"></span><h2>survey.migrations.0005_alter_respondentssurveystatusdata_status module<a class="headerlink" href="#module-survey.migrations.0005_alter_respondentssurveystatusdata_status" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0005_alter_respondentssurveystatusdata_status.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0005_alter_respondentssurveystatusdata_status.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0005_alter_respondentssurveystatusdata_status.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0005_alter_respondentssurveystatusdata_status.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('survey',</span> <span class="pre">'0004_auto_20210615_2214')]</span></em><a class="headerlink" href="#survey.migrations.0005_alter_respondentssurveystatusdata_status.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0005_alter_respondentssurveystatusdata_status.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='status',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0005_alter_respondentssurveystatusdata_status.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0006_auto_20210629_0023">
+<span id="survey-migrations-0006-auto-20210629-0023-module"></span><h2>survey.migrations.0006_auto_20210629_0023 module<a class="headerlink" href="#module-survey.migrations.0006_auto_20210629_0023" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0006_auto_20210629_0023.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0006_auto_20210629_0023.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0006_auto_20210629_0023.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0006_auto_20210629_0023.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('survey',</span> <span class="pre">'0005_alter_respondentssurveystatusdata_status')]</span></em><a class="headerlink" href="#survey.migrations.0006_auto_20210629_0023.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0006_auto_20210629_0023.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='project',</span> <span class="pre">name='question',</span> <span class="pre">field=&lt;django.db.models.fields.related.ManyToManyField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='question',</span> <span class="pre">name='type',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='status',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0006_auto_20210629_0023.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0007_alter_project_owner">
+<span id="survey-migrations-0007-alter-project-owner-module"></span><h2>survey.migrations.0007_alter_project_owner module<a class="headerlink" href="#module-survey.migrations.0007_alter_project_owner" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0007_alter_project_owner.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0007_alter_project_owner.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0007_alter_project_owner.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0007_alter_project_owner.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('auth',</span> <span class="pre">'__first__'),</span> <span class="pre">('survey',</span> <span class="pre">'0006_auto_20210629_0023')]</span></em><a class="headerlink" href="#survey.migrations.0007_alter_project_owner.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0007_alter_project_owner.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='project',</span> <span class="pre">name='owner',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0007_alter_project_owner.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0008_auto_20210629_2247">
+<span id="survey-migrations-0008-auto-20210629-2247-module"></span><h2>survey.migrations.0008_auto_20210629_2247 module<a class="headerlink" href="#module-survey.migrations.0008_auto_20210629_2247" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0008_auto_20210629_2247.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0008_auto_20210629_2247.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0008_auto_20210629_2247.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0008_auto_20210629_2247.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('survey',</span> <span class="pre">'0007_alter_project_owner')]</span></em><a class="headerlink" href="#survey.migrations.0008_auto_20210629_2247.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0008_auto_20210629_2247.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;RenameField</span>&#160; <span class="pre">model_name='project',</span> <span class="pre">old_name='owner',</span> <span class="pre">new_name='owner_id'&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='status',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0008_auto_20210629_2247.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0009_alter_question_type">
+<span id="survey-migrations-0009-alter-question-type-module"></span><h2>survey.migrations.0009_alter_question_type module<a class="headerlink" href="#module-survey.migrations.0009_alter_question_type" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0009_alter_question_type.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0009_alter_question_type.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0009_alter_question_type.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0009_alter_question_type.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('survey',</span> <span class="pre">'0008_auto_20210629_2247')]</span></em><a class="headerlink" href="#survey.migrations.0009_alter_question_type.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0009_alter_question_type.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='question',</span> <span class="pre">name='type',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0009_alter_question_type.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0010_auto_20210629_2248">
+<span id="survey-migrations-0010-auto-20210629-2248-module"></span><h2>survey.migrations.0010_auto_20210629_2248 module<a class="headerlink" href="#module-survey.migrations.0010_auto_20210629_2248" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0010_auto_20210629_2248.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0010_auto_20210629_2248.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0010_auto_20210629_2248.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0010_auto_20210629_2248.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('survey',</span> <span class="pre">'0009_alter_question_type')]</span></em><a class="headerlink" href="#survey.migrations.0010_auto_20210629_2248.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0010_auto_20210629_2248.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;RenameField</span>&#160; <span class="pre">model_name='project',</span> <span class="pre">old_name='owner_id',</span> <span class="pre">new_name='owner'&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='status',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0010_auto_20210629_2248.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0011_auto_20210630_0008">
+<span id="survey-migrations-0011-auto-20210630-0008-module"></span><h2>survey.migrations.0011_auto_20210630_0008 module<a class="headerlink" href="#module-survey.migrations.0011_auto_20210630_0008" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0011_auto_20210630_0008.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0011_auto_20210630_0008.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0011_auto_20210630_0008.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0011_auto_20210630_0008.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('auth',</span> <span class="pre">'__first__'),</span> <span class="pre">('survey',</span> <span class="pre">'0010_auto_20210629_2248')]</span></em><a class="headerlink" href="#survey.migrations.0011_auto_20210630_0008.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0011_auto_20210630_0008.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='project',</span> <span class="pre">name='owner',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='status',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0011_auto_20210630_0008.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0012_auto_20210707_2315">
+<span id="survey-migrations-0012-auto-20210707-2315-module"></span><h2>survey.migrations.0012_auto_20210707_2315 module<a class="headerlink" href="#module-survey.migrations.0012_auto_20210707_2315" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0012_auto_20210707_2315.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0012_auto_20210707_2315.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0012_auto_20210707_2315.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0012_auto_20210707_2315.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('survey',</span> <span class="pre">'0011_auto_20210630_0008')]</span></em><a class="headerlink" href="#survey.migrations.0012_auto_20210707_2315.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0012_auto_20210707_2315.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='question',</span> <span class="pre">name='type',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='status',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='survey',</span> <span class="pre">name='id',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0012_auto_20210707_2315.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0013_auto_20210707_2322">
+<span id="survey-migrations-0013-auto-20210707-2322-module"></span><h2>survey.migrations.0013_auto_20210707_2322 module<a class="headerlink" href="#module-survey.migrations.0013_auto_20210707_2322" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0013_auto_20210707_2322.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0013_auto_20210707_2322.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0013_auto_20210707_2322.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0013_auto_20210707_2322.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('survey',</span> <span class="pre">'0012_auto_20210707_2315')]</span></em><a class="headerlink" href="#survey.migrations.0013_auto_20210707_2322.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0013_auto_20210707_2322.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='question',</span> <span class="pre">name='type',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='status',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='survey',</span> <span class="pre">name='id',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0013_auto_20210707_2322.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0014_auto_20210707_2323">
+<span id="survey-migrations-0014-auto-20210707-2323-module"></span><h2>survey.migrations.0014_auto_20210707_2323 module<a class="headerlink" href="#module-survey.migrations.0014_auto_20210707_2323" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0014_auto_20210707_2323.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0014_auto_20210707_2323.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0014_auto_20210707_2323.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0014_auto_20210707_2323.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('survey',</span> <span class="pre">'0013_auto_20210707_2322')]</span></em><a class="headerlink" href="#survey.migrations.0014_auto_20210707_2323.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0014_auto_20210707_2323.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='question',</span> <span class="pre">name='type',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='status',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0014_auto_20210707_2323.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0015_alter_respondentssurveystatusdata_status">
+<span id="survey-migrations-0015-alter-respondentssurveystatusdata-status-module"></span><h2>survey.migrations.0015_alter_respondentssurveystatusdata_status module<a class="headerlink" href="#module-survey.migrations.0015_alter_respondentssurveystatusdata_status" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0015_alter_respondentssurveystatusdata_status.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0015_alter_respondentssurveystatusdata_status.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0015_alter_respondentssurveystatusdata_status.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0015_alter_respondentssurveystatusdata_status.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('survey',</span> <span class="pre">'0014_auto_20210707_2323')]</span></em><a class="headerlink" href="#survey.migrations.0015_alter_respondentssurveystatusdata_status.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0015_alter_respondentssurveystatusdata_status.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='status',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0015_alter_respondentssurveystatusdata_status.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0016_auto_20210717_2111">
+<span id="survey-migrations-0016-auto-20210717-2111-module"></span><h2>survey.migrations.0016_auto_20210717_2111 module<a class="headerlink" href="#module-survey.migrations.0016_auto_20210717_2111" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0016_auto_20210717_2111.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0016_auto_20210717_2111.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0016_auto_20210717_2111.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0016_auto_20210717_2111.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('survey',</span> <span class="pre">'0015_alter_respondentssurveystatusdata_status')]</span></em><a class="headerlink" href="#survey.migrations.0016_auto_20210717_2111.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0016_auto_20210717_2111.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='question',</span> <span class="pre">name='type',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='status',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0016_auto_20210717_2111.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0017_auto_20210725_1450">
+<span id="survey-migrations-0017-auto-20210725-1450-module"></span><h2>survey.migrations.0017_auto_20210725_1450 module<a class="headerlink" href="#module-survey.migrations.0017_auto_20210725_1450" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0017_auto_20210725_1450.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0017_auto_20210725_1450.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0017_auto_20210725_1450.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0017_auto_20210725_1450.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('survey',</span> <span class="pre">'0016_auto_20210717_2111')]</span></em><a class="headerlink" href="#survey.migrations.0017_auto_20210725_1450.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0017_auto_20210725_1450.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='answer_score',</span> <span class="pre">field=&lt;django.db.models.fields.SmallIntegerField&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='project_score',</span> <span class="pre">field=&lt;django.db.models.fields.SmallIntegerField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='question',</span> <span class="pre">name='type',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0017_auto_20210725_1450.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0018_auto_20210802_0007">
+<span id="survey-migrations-0018-auto-20210802-0007-module"></span><h2>survey.migrations.0018_auto_20210802_0007 module<a class="headerlink" href="#module-survey.migrations.0018_auto_20210802_0007" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0018_auto_20210802_0007.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0018_auto_20210802_0007.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0018_auto_20210802_0007.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0018_auto_20210802_0007.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('survey',</span> <span class="pre">'0017_auto_20210725_1450')]</span></em><a class="headerlink" href="#survey.migrations.0018_auto_20210802_0007.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0018_auto_20210802_0007.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='time',</span> <span class="pre">field=&lt;django.db.models.fields.PositiveSmallIntegerField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='status',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0018_auto_20210802_0007.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0019_auto_20210802_0017">
+<span id="survey-migrations-0019-auto-20210802-0017-module"></span><h2>survey.migrations.0019_auto_20210802_0017 module<a class="headerlink" href="#module-survey.migrations.0019_auto_20210802_0017" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0019_auto_20210802_0017.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0019_auto_20210802_0017.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0019_auto_20210802_0017.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0019_auto_20210802_0017.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('survey',</span> <span class="pre">'0018_auto_20210802_0007')]</span></em><a class="headerlink" href="#survey.migrations.0019_auto_20210802_0017.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0019_auto_20210802_0017.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='remaining_time',</span> <span class="pre">field=&lt;django.db.models.fields.PositiveSmallIntegerField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='question',</span> <span class="pre">name='type',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='status',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0019_auto_20210802_0017.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0020_auto_20210821_2245">
+<span id="survey-migrations-0020-auto-20210821-2245-module"></span><h2>survey.migrations.0020_auto_20210821_2245 module<a class="headerlink" href="#module-survey.migrations.0020_auto_20210821_2245" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0020_auto_20210821_2245.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0020_auto_20210821_2245.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0020_auto_20210821_2245.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0020_auto_20210821_2245.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('survey',</span> <span class="pre">'0019_auto_20210802_0017')]</span></em><a class="headerlink" href="#survey.migrations.0020_auto_20210821_2245.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0020_auto_20210821_2245.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='question',</span> <span class="pre">name='type',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='status',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0020_auto_20210821_2245.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0021_alter_respondentssurveystatusdata_status">
+<span id="survey-migrations-0021-alter-respondentssurveystatusdata-status-module"></span><h2>survey.migrations.0021_alter_respondentssurveystatusdata_status module<a class="headerlink" href="#module-survey.migrations.0021_alter_respondentssurveystatusdata_status" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0021_alter_respondentssurveystatusdata_status.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0021_alter_respondentssurveystatusdata_status.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0021_alter_respondentssurveystatusdata_status.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0021_alter_respondentssurveystatusdata_status.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('survey',</span> <span class="pre">'0020_auto_20210821_2245')]</span></em><a class="headerlink" href="#survey.migrations.0021_alter_respondentssurveystatusdata_status.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0021_alter_respondentssurveystatusdata_status.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='status',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0021_alter_respondentssurveystatusdata_status.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations.0022_auto_20211012_0004">
+<span id="survey-migrations-0022-auto-20211012-0004-module"></span><h2>survey.migrations.0022_auto_20211012_0004 module<a class="headerlink" href="#module-survey.migrations.0022_auto_20211012_0004" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="survey.migrations.0022_auto_20211012_0004.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">survey.migrations.0022_auto_20211012_0004.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#survey.migrations.0022_auto_20211012_0004.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0022_auto_20211012_0004.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('survey',</span> <span class="pre">'0021_alter_respondentssurveystatusdata_status')]</span></em><a class="headerlink" href="#survey.migrations.0022_auto_20211012_0004.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="survey.migrations.0022_auto_20211012_0004.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='question',</span> <span class="pre">name='type',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='respondentssurveystatusdata',</span> <span class="pre">name='status',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#survey.migrations.0022_auto_20211012_0004.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-survey.migrations">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-survey.migrations" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Survey</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, YuryShashurin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/survey.migrations.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
