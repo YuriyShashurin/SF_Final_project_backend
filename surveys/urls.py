@@ -22,8 +22,19 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 from survey.views import MyTokenObtainPairView
+from django.views.generic import TemplateView
+from rest_framework.schemas import get_schema_view
 
 urlpatterns = [
+    path('openapi', get_schema_view(
+        title="SurveysHR",
+        description="API for all things …",
+        version="1.0.0"
+    ), name='openapi-schema'),
+    path('redoc/', TemplateView.as_view(
+        template_name='redoc.html',
+        extra_context={'schema_url': 'openapi-schema'}
+    ), name='redoc'),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('download/', include('download_data.urls')),
@@ -31,9 +42,6 @@ urlpatterns = [
     path('api/v1/', include('survey.urls')),
     path('api/v1/token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/v1/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('auth/', include('djoser.urls')),
-    path('auth/', include('djoser.urls.authtoken')),
-    path('auth/', include('djoser.urls.jwt')),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
 

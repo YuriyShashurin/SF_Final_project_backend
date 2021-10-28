@@ -28,7 +28,7 @@ class ProjectsViewSet(viewsets.ModelViewSet):
 
             available_projects = []
             for obj in user_projects:
-                if obj.status != 'Complete':
+                if obj.status != 'Completey':
                     available_projects.append(obj.project.id)
 
             queryset = Project.objects.filter(id__in=available_projects, is_active=True)
