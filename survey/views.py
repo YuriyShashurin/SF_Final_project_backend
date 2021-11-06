@@ -25,13 +25,14 @@ class ProjectsViewSet(viewsets.ModelViewSet):
         user_id = self.request.query_params.get('user_id')
         if available and user_id is not None:
             user_projects = RespondentsSurveyStatusData.objects.filter(user_id=user_id)
-
-            available_projects = []
+            completed_projects =[]
             for obj in user_projects:
-                if obj.status != 'Completey':
-                    available_projects.append(obj.project.id)
+                if obj.status == 'Complete':
+                    completed_projects.append(obj.project.id)
 
-            queryset = Project.objects.filter(id__in=available_projects, is_active=True)
+            print(completed_projects)
+            queryset = Project.objects.filter(is_active=True).exclude(id__in=completed_projects)
+            print(queryset)
 
         return queryset
 
@@ -118,7 +119,6 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
 
 class MyTokenObtainPairView(TokenObtainPairView):
