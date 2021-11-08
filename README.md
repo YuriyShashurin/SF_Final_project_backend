@@ -6,12 +6,12 @@
 https://github.com/YuriyShashurin/SF_Final_project_frontend.git
 ```
 
-#### Stack backend проекта:
+### Stack backend проекта:
 
 * Python 3.8
 * Django 3.2 + PostgreSql 13
 
-#### FullStack проект развернут на публичном IP по адресу 
+### FullStack проект развернут на публичном IP по адресу 
 
 * Сайт проекта http://178.154.200.34
 * API проекта http://178.154.200.34/api/v1/
