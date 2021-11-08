@@ -66,9 +66,40 @@ python manage.py migrate
 django-admin loaddata db.json
 ```
 
-#### 7. Запускаем проекта на dev-сервере Django и открываем его  (вводим команду в командной строке из папки проекта)
+#### 7. Создаем суперюзера  (вводим команду в командной строке из папки проекта)
+
+```
+python manage.py createsuperuser
+Далее, следовать интрукциям
+```
+
+#### 8. Запускаем проекта на dev-сервере Django и открываем его  (вводим команду в командной строке из папки проекта)
 
 ```
 python manage.py runserver
 http://127.0.0.1:8000/api/v1
+```
+
+
+### Как развернуть проект через Docker
+
+#### 1. Выполнить шаги 1,2,4 из вышеописанного мануала
+
+#### 2. Выполнить в консоли 
+```
+docker-compose up
+```
+#### 3. Зайти в консоль в Docker контейнера и выполнить команды миграции и загрузки фикстуры
+```
+docker exec -it enter_name_of_your_container bash
+Команды: 
+* python manage.py migrate
+* django-admin loaddata db.json
+* python manage.py createsuperuser
+* python manage.py collectstatic
+```
+
+#### 4. Открыть проект по ссылке
+```
+http://127.0.0.1:8001/api/v1
 ```
