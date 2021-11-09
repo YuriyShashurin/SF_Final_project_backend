@@ -14,6 +14,7 @@ https://github.com/YuriyShashurin/SF_Final_project_frontend.git
 ### FullStack проект развернут на публичном IP по адресу 
 
 * Сайт проекта http://178.154.200.34
+* Личный кабинет администратора http://178.154.200.34/#/admin-area/main
 * API проекта http://178.154.200.34/api/v1/
 * Документация проекта http://178.154.200.34/docs/
 
